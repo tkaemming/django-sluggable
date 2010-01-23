@@ -8,6 +8,10 @@ Automatically generated unique model slugs for Django models.
 To install `django-sluggable`, simply check out the repository from GitHub
 and run `python setup.py install` to install the Python package.
 
+After installing, add `sluggable` to your Django settings' 
+[`INSTALLED_APPS`](http://docs.djangoproject.com/en/dev/ref/settings/#installed-apps)
+tuple.
+
 ## Usage
 To add automatic slugs to a model, just have your model class extend 
 `sluggable.models.SluggableModel`.
