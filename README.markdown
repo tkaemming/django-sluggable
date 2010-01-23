@@ -1,8 +1,8 @@
 # django-sluggable
 Automatically generated unique model slugs for Django models.
 
-* **Author:** Ted Kaemming <ted@kaemming.com>
-* **Homepage:** http://www.github.com/tkaemming/django-sluggable/
+* **Author:** Ted Kaemming <<ted@kaemming.com>>
+* **Homepage:** <http://www.github.com/tkaemming/django-sluggable/>
 
 ## Installation
 To install `django-sluggable`, simply check out the repository from GitHub
@@ -27,8 +27,8 @@ automatically generated at model save.
 
 ### Using `unique_together` with your Models
 `django-sluggable` supports the use of the model's `Meta` attribute
-`unique_together` as documented on the Django documentation site:
-http://docs.djangoproject.com/en/dev/ref/models/options/#unique-together
+`unique_together` as documented on the 
+[Django documentation site](http://docs.djangoproject.com/en/dev/ref/models/options/#unique-together).
 
 When `slug` is specified as one of the fields in a `unique_together` tuple,
 the slug will automatically be made unique to meet the constraints of the
