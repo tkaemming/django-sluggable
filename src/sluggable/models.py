@@ -5,6 +5,13 @@ from django.template.defaultfilters import slugify
 class SluggableModel(models.Model):
     slug = models.SlugField(editable=False)
     
+    def _get_queryset_for_slug(self):
+        """
+        Returns a queryset that will be filtered on to check for conflicting
+        slugs. This can be overridden for more advanced implementations.
+        """
+        return self.__class__._default_manager
+    
     def _generate_slug(self):
         """
         Generate a unique slug for this model.
@@ -20,7 +27,7 @@ class SluggableModel(models.Model):
         else:
             filter_kwargs = {}
         
-        queryset = self._default_manager.filter(**filter_kwargs)
+        queryset = self._get_queryset_for_slug().filter(**filter_kwargs)
         base_slug = self._generate_base_slug()
         
         try:
